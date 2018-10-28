@@ -1,0 +1,44 @@
+---
+
+
+---
+
+<h1 id="spring-batch---1">Spring Batch - 1</h1>
+<ul>
+<li>Batch란 무엇인가?</li>
+<li>Spring Batch에 대해서</li>
+</ul>
+<h2 id="batch">Batch</h2>
+<p>Batch Processing란 일괄 처리라고도 하는 과정으로서 실시간으로 요청에 의해서 처리되는 방식이 아닌 일괄적으로 한꺼번에 대량의 프로세스를 처리하는 방식.</p>
+<ul>
+<li>대량의 데이터를 처리한다.</li>
+<li>특정 시간에 프로그램을 실행한다.</li>
+<li>일괄적으로 처리한다.</li>
+</ul>
+<blockquote>
+<p>예시 : 여러개의 계열사가 있는 기업의 조직도를 <strong>매일 새벽에 각 계열사의 데이터를 조회한 후 merge작업이 필요할 때 배치 프로그램으로 구현</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Batch vs Quartz?</strong><br>
+<strong>Quartz는 스케쥴러의 역할을 담당</strong>하고 있기 때문에 Batch처럼 대용량의 데이터 처리 기능은 지원하지 않는다.<br>
+반대로 Batch에서는 스케쥴러의 기능이 없기 때문에 <strong>Quartz와 Batch</strong>를 조합해서 사용한다.</p>
+</blockquote>
+<h2 id="spring-batch">Spring batch</h2>
+<ul>
+<li>Spring batch 구성</li>
+<li>Spring Batch의 관리 기능 (로깅, 통계, 모니터링)</li>
+</ul>
+<h3 id="spring-batch-구성">Spring batch 구성</h3>
+<ul>
+<li>Job : 여러개의 Step를 포함하고 있고, Batch에서 실행이 되는 실행 단위</li>
+<li>JobLauncher : Job를 실행시키는 역할</li>
+<li>JopRepository : Job 또는 Step를 저장소(DB 등)에서 조회/생성/수정 하는 역할</li>
+<li>Step : Job안에서 데이터 읽기/쓰기/가공 등을 하는 실행 단위</li>
+<li>ItemReader : 하나의 Step안에서 데이터를 조회하는 역할</li>
+<li>ItemProcessor : ItemReader를 통해 조회된 데이터를 가공하는 역할</li>
+<li>ItemWriter : ItemProcessor에서 가공된 데이터를 저장하는 역할</li>
+</ul>
+<blockquote>
+<p>출처 : <a href="http://blog.woniper.net/356">enter link description here</a></p>
+</blockquote>
+
